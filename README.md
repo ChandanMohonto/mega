@@ -137,7 +137,7 @@ aws configure
     --cluster mega \
     --approve
   ```
-  - <b>Create Nodegroup (Master machine)</b>
+  - <b>Create Nodegroup on Master machine, it might take 15 to 20 minutes</b>
   ```bash
   eksctl create nodegroup --cluster=mega \
                        --region=us-west-2 \
@@ -152,6 +152,12 @@ aws configure
   ```
 
 >  Make sure the ssh-public-key "eks-nodegroup-key" is available in your aws account
+
+- <b>Check if Nodegroup is created</b>
+```bash
+  kubectl get nodes -n mega
+  Also, go to AWS EC2, you should see to machines got created
+```
 
 - <b id="Sonar">Install and configure SonarQube (Master machine)</b>
 ```bash
