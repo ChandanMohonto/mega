@@ -36,7 +36,7 @@
 Install & Configure Docker by using below command, "NewGrp docker" will refresh the group config hence no need to restart the EC2 machine.
 
 ```bash
-sudo apt-get update
+sudo apt update
 ```
 ```bash
 sudo apt-get install docker.io -y
@@ -51,6 +51,11 @@ sudo chmod 777 /var/run/docker.sock
 ```
 #
 - <b id="Jenkins">Install and configure Jenkins (Master machine)</b>
+## Sometimes Jenkins older versions are cached, clear them:
+  sudo rm -f /etc/apt/sources.list.d/jenkins.list
+  sudo rm -f /usr/share/keyrings/jenkins-keyring.asc
+
+
 ```bash
 sudo apt update -y
 sudo apt install fontconfig openjdk-17-jre -y
@@ -62,9 +67,18 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
   
-sudo apt-get update -y
-sudo apt-get install jenkins -y
+sudo apt update -y
 ```
+## Confirm the latest Jenkins version is available
+  apt-cache madison jenkins
+
+## Install the latest Jenkins version
+  sudo apt install jenkins -y
+
+## Verify Jenkins version after installation
+  sudo systemctl status jenkins
+  jenkins --version
+
 - <b>Now, access Jenkins Master on the browser on port 8080 and configure it, install jenkins suggested plugins </b>.
 #
 - <b id="EKS">Create EKS Cluster on AWS (Master machine)</b>
