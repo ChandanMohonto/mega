@@ -177,6 +177,7 @@ aws configure
 ```
 ```bash
     Got to the link: <ec2-machine-ip>:9000/ and setup SonarQube account
+    Initial user & passwoed: admin, admin
 ```
 #
 - Install Trivy (On Master Machine)
