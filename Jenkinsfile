@@ -1,6 +1,6 @@
 @Library('Shared') _
 pipeline {
-    agent {label 'Node'}
+    agent {label 'Node'} # agent any; if you are running Jenkins on one (master) machine
     
     environment{
         SONAR_HOME = tool "Sonar"
