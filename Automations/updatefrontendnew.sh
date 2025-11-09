@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Set the AWS Instance ID and path to the .env file
-INSTANCE_ID="i-01982dcea3e3dddfd"
+# Set the AWS Node Instance ID (where app will be running) and path to the .env file
+INSTANCE_ID="i-008d45ccab7efaa9d"
 
 # Retrieve the public IP address of the specified EC2 instance
 ipv4_address=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
