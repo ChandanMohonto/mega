@@ -239,11 +239,11 @@ trivy --version
   - Pipeline: Stage View
   - Blue Ocean
 
-## Add OWASP Dependency Check (it  might take 20 minutes):
+## Add OWASP Dependency Check (it  might take 20 minutes to get installed):
 ```bash
 Jenlkins > Manage > Tools > Dependency-Check installations
 Hit: Add Dependency-Check
-Input: Name = OWASP > Check Mark: Install automatically > Select: Install from github.com > Save (it might take 20 minutes)
+Input: Name = OWASP > Check Mark: Install automatically > + Add installer > Select: Install from github.com > Save
 ```
 ## Store SonarQube token with Jenkins
 ```bash
